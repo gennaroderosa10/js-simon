@@ -55,7 +55,14 @@ form.addEventListener("submit", function (event) {
     num4UtenteOutput.innerHTML = num4UtenteInput.value;
     num5UtenteOutput.innerHTML = num5UtenteInput.value;
 
-    if (num1Output === num1UtenteOutput && num2Output === num2UtenteOutput && num3Output === num3UtenteOutput && num4Output === num4UtenteOutput && num5Output === num5UtenteOutput) {
+    if (
+        //con la parseInt e innerhtml faccio in modo che il valore diventi numerico
+        num1Output === parseInt(num1UtenteOutput.innerHTML) &&
+        num2Output === parseInt(num2UtenteOutput.innerHTML) &&
+        num3Output === parseInt(num3UtenteOutput.innerHTML) &&
+        num4Output === parseInt(num4UtenteOutput.innerHTML) &&
+        num5Output === parseInt(num5UtenteOutput.innerHTML)
+    ) {
         vittoria.classList.remove("d-none");
     } else {
         sconfitta.classList.remove("d-none");
